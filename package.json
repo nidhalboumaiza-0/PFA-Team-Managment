@@ -1,0 +1,18 @@
+{
+  "name": "team-management-dashboard",
+  "version": "1.0.0",
+  "description": "Full-stack team management application",
+  "private": true,
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm start",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install:all": "npm run install:client && npm run install:server",
+    "build:client": "cd client && npm run build",
+    "start": "echo 'Please run dev:client and dev:server in separate terminals'"
+  },
+  "keywords": ["team-management", "dashboard", "react", "express", "mongodb"],
+  "author": "",
+  "license": "MIT"
+} 

@@ -1,0 +1,21 @@
+# Allow .env files to be edited
+!.env
+!.env.*
+!**/.env
+!**/.env.*
+
+# Ignore common files and directories
+node_modules/
+dist/
+build/
+coverage/
+.git/
+*.log
+.DS_Store
+Thumbs.db
+
+# Don't ignore important config files
+!.gitignore
+!.cursorignore
+!package.json
+!tsconfig.json 
