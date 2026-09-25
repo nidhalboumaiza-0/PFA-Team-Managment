@@ -24,48 +24,43 @@ project/
 
 ## Getting Started
 
-### Backend Setup
+1. Install Node.js 18 or newer and MongoDB, then start MongoDB locally or prepare an Atlas connection.
+2. From the repository root, install both the client and server dependencies:
 
-1. Navigate to the server directory:
    ```bash
-   cd server
+   npm run install:all
    ```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+3. Create `server/.env`:
 
-3. Create a `.env` file with your MongoDB connection:
-   ```
-   MONGODB_URI=mongodb://localhost:27017/team-management
+   ```dotenv
+   NODE_ENV=development
+   MONGODB_URI=mongodb://127.0.0.1:27017/team-management
    PORT=5000
-   JWT_SECRET=your_secret_key_here
+   JWT_SECRET=replace-with-a-long-random-value
    ```
 
-4. Start the server:
+4. Create `client/.env` so Vite can reach the backend:
+
+   ```dotenv
+   VITE_API_URL=http://localhost:5000/api
+   ```
+
+5. Start the backend from the repository root:
+
    ```bash
-   npm start
+   npm run dev:server
    ```
 
-### Frontend Setup
+6. In a second terminal, start the frontend:
 
-1. Navigate to the client directory:
    ```bash
-   cd client
+   npm run dev:client
    ```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+7. Open `http://localhost:5173`. The backend listens on `http://localhost:5000` by default.
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-The application will be available at http://localhost:5173
+Optional development users can be created from `server/` with `npm run create-admin` or `npm run create-test-users` after MongoDB is connected.
 
 ## Features
 
@@ -111,4 +106,4 @@ The application connects to the Express backend API for data storage and retriev
 
 ## License
 
-MIT 
+MIT
